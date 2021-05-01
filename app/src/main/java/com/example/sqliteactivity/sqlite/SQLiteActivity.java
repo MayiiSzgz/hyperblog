@@ -1,17 +1,14 @@
-package com.example.sqliteactivity;
+package com.example.sqliteactivity.sqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.sqliteactivity.databinding.ActivityMainBinding;
-import com.example.sqliteactivity.sqlite.SQLiteActivity;
 
-public class MenuPrincipalActivity extends AppCompatActivity {
-
+public class SQLiteActivity extends AppCompatActivity {
     ActivityMainBinding activityMainBinding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +18,9 @@ public class MenuPrincipalActivity extends AppCompatActivity {
 
     }
 
+
+
     private void setClickListeners() {
-        activityMainBinding.cvSqlite.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), SQLiteActivity.class ));
-            }
-        });
+
     }
 }
