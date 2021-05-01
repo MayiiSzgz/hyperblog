@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteActivity">
-        <activity android:name=".sqlite.Nueva"></activity>
+        <activity android:name=".sqlite.EditarActivity"></activity>
+        <activity android:name=".sqlite.ConsultaActivity" />
+        <activity android:name=".sqlite.Nueva" />
         <activity android:name=".sqlite.AgregandoDatosActivity" />
         <activity android:name=".sqlite.SQLiteActivity" />
         <activity android:name=".MenuPrincipalActivity">

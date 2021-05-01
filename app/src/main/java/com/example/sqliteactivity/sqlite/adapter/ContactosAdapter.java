@@ -1,5 +1,6 @@
 package com.example.sqliteactivity.sqlite.adapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.sqliteactivity.R;
+import com.example.sqliteactivity.sqlite.ConsultaActivity;
 import com.example.sqliteactivity.sqlite.modelo.Contacto;
 
 import java.util.ArrayList;
@@ -32,6 +34,17 @@ public class ContactosAdapter extends RecyclerView.Adapter<ContactosAdapter.View
             tv_email = itemView.findViewById(R.id.tv_email);
             tv_numero = itemView.findViewById(R.id.tv_numero);
             tv_nombre = itemView.findViewById(R.id.tv_nombre);
+
+            itemView.setOnClickListener(new View.OnClickListener()
+            {
+                @Override
+                public void onClick(View v)
+                {
+                    Intent intent = new Intent(itemView.getContext(), ConsultaActivity.class);
+                    intent.putExtra("ID", listaContactos.get(getAdapterPosition()).getId());
+                    v.getContext().startActivity(intent);
+                }
+            });
         }
     }
     @NonNull
