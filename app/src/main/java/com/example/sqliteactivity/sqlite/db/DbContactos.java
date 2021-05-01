@@ -64,7 +64,8 @@ public class DbContactos extends DbHelper
                 contacto.setId(cursorContactos.getInt(0));
                 contacto.setNombre(cursorContactos.getString(1));
                 contacto.setTelefono(cursorContactos.getString(2));
-                contacto.setCorreo_electronico(contacto.getCorreo_electronico(3));
+                contacto.setCorreo_electronico(cursorContactos.getString(3));
+                contactos.add(contacto);
             }while(cursorContactos.moveToNext());
         }
         cursorContactos.close();

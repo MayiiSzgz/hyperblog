@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -13,18 +14,23 @@ import android.widget.Toast;
 
 import com.example.sqliteactivity.R;
 import com.example.sqliteactivity.databinding.ActivitySQLiteBinding;
+import com.example.sqliteactivity.sqlite.adapter.ContactosAdapter;
+import com.example.sqliteactivity.sqlite.db.DbContactos;
+import com.example.sqliteactivity.sqlite.modelo.Contacto;
+
+import java.util.ArrayList;
 
 public class SQLiteActivity extends AppCompatActivity {
     ActivitySQLiteBinding activitySQLiteBinding;
-
+    public ArrayList<Contacto> listaContactos;
+    ContactosAdapter contactosAdapter;
     @Override
    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         activitySQLiteBinding = ActivitySQLiteBinding.inflate((getLayoutInflater()));
         setContentView(activitySQLiteBinding.getRoot());
         setClickListeners();
-
-
+        setRecyclerView();
     }
 
     @Override
@@ -53,6 +59,16 @@ public class SQLiteActivity extends AppCompatActivity {
 
     private void setClickListeners() {
     }
+
+    private void setRecyclerView()
+    {
+        DbContactos dbContactos = new DbContactos(getApplicationContext());
+        listaContactos = dbContactos.obtenerContactos();
+        contactosAdapter = new ContactosAdapter(listaContactos);
+        activitySQLiteBinding.rvContactos.setAdapter(contactosAdapter);
+    }
+
+
 
 
 
