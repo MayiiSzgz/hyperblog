@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">SQLiteActivity</string>
+    <string name="app_name">EmmApp</string>
+    <string name="hint_nombre">Nombre:</string>
+    <string name="hint_telefono">Telefono:</string>
+    <string name="hint_correo_electronico">Correo electronico:</string>
+    <string name="btn_guarda">Guardar registro</string>
+
+    <string-array name="menu_nuevo">Nuevo registro</string-array>
+    <string name="title_activity_maps">Map</string>
+    <string name="nuevo_registro">Nuevo registro</string>
+
+    <string name="pruebao">prueba</string>
 </resources>
